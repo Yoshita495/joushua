@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Restobar</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0; padding: 0;
+      background: #fdfdfd;
+      color: #333;
+    }
+    nav {
+      background-color: #111;
+      padding: 15px;
+      text-align: center;
+    }
+    nav a {
+      color: white; margin: 0 15px;
+      text-decoration: none; font-weight: bold;
+    }
+    h1 { font-size: 40px; text-align: center; margin: 40px 0 20px; }
+    p {
+      font-size: 18px;
+      text-align: center;
+      line-height: 28px;
+      margin: 0 20px 30px;
+    }
+    section { padding: 50px 20px; text-align: center; }
+    ul { list-style: none; padding: 0; font-size: 18px; }
+    li { margin-bottom: 10px; }
+    form input, form textarea {
+      width: 90%; max-width: 500px;
+      padding: 10px; margin: 10px 0;
+      font-size: 16px;
+    }
+    form button {
+      padding: 10px 20px;
+      background-color: #444;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    footer {
+      background-color: #222;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+    .fade-in {
+      opacity: 0;
+      animation: fadeIn 2s ease forwards;
+    }
+    @keyframes fadeIn {
+      to { opacity: 1; }
+    }
+    .image-row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      padding: 20px;
+    }
+    .image-row img {
+      width: 90%;
+      max-width: 400px;
+      border-radius: 8px;
+    }
+    .logo {
+      text-align: center;
+      margin-top: 40px;
+    }
+    .logo img { width: 200px; }
+
+    /* --- New Video Styles --- */
+    .video-container {
+      max-width: 800px;
+      margin: 40px auto;
+      width: 100%;
+    }
+    .video-container iframe {
+      aspect-ratio: 16/9;
+      width: 100%;
+      border: 0;
+    }
+
+    @media screen and (max-width: 600px) {
+      h1 { font-size: 30px; }
+      p { font-size: 16px; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="logo">
+    <img src="mybar.jpg" alt="Bar Image">
+  </div>
+
+  <nav>
+    <a href="#about">About</a>
+    <a href="#menu">Menu</a>
+    <a href="#reviews">Reviews</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <h1 class="fade-in">GET YOUR BEERY, HAPPY ON!</h1>
+  <p class="fade-in">
+    Welcome to Restobar! Indulge in our fusion of global flavors and local favorites, crafted to delight every palate.
+  </p>
+
+  <div class="video-container">
+    <iframe
+      src="https://www.youtube.com/embed/9D9h53Q1AEA"
+      title="Restobar promo video"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen>
+    </iframe>
+  </div>
+
+  <div class="image-row">
+    <img src="resto.jpg" alt="Resto Image">
+    <img src="resto3.jpg" alt="Resto Image">
+    <img src="resto5.jpg" alt="Resto Image">
+  </div>
+
+  <section id="about">
+    <h2>About Yosopra</h2>
+    <p>At Yosopra Restobar, we blend the spirit of relaxation with exciting flavors. Come enjoy a memorable evening with great food, drinks, and ambiance.</p>
+  </section>
+
+  <section id="menu">
+    <h2>Our Menu</h2>
+    <ul>
+      <li>🍸 Classic Mojito – ₹199</li>
+      <li>🍺 Kingfisher Pint – ₹149</li>
+      <li>🍺 Magic Moments – ₹149</li>
+      <li>🍹 Cosmopolitan – ₹249</li>
+      <li>🍔 Veg Burger – ₹99</li>
+      <li>🍕 Paneer Pizza – ₹199</li>
+      <li>🥃 Bacardi Rum – ₹139</li>
+      <li>🍛 Mutton Biryani – ₹450</li>
+    </ul>
+  </section>
+
+  <section id="reviews">
+    <h2>Customer Reviews</h2>
+    <p>"Amazing place with great vibes and music!" – Harini V.</p>
+    <p>"Loved the cocktails and the cozy atmosphere." – Kiranmai P.</p>
+    <p>"Best bar experience in Vizag!" – Arun Y.</p>
+  </section>
+
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <p>📍 Naidu Thota, Visakhapatnam, India</p>
+    <p>📞 +91 7396826199</p>
+    <form>
+      <input type="text" placeholder="G. YAMINI YOSHITA" required><br>
+      <input type="email" placeholder="yoshita6541@gmail.com" required><br>
+      <textarea rows="4" placeholder="Enjoy our dining!!" required></textarea><br>
+      <button type="submit">Send</button>
+    </form>
+  </section>
+
+  <footer>
+    &copy; 2025 Restobar | Follow us:
+    <a href="#" style="color:lightblue;">Instagram</a> |
+    <a href="#" style="color:lightblue;">Facebook</a>
+  </footer>
+
+</body>
+</html>
