@@ -4,129 +4,239 @@
   <meta charset="UTF-8">
   <title>Restobar</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Restobar: Premium bar & restaurant experience in Visakhapatnam. View menu, hours, contact, and more.">
+  <meta property="og:title" content="Restobar - Premium Dining & Bar">
+  <meta property="og:description" content="Fusion of global flavors and luxury ambiance. Book your table today!">
+  <meta property="og:image" content="https://joushuawebsite.netlify.app/mybar.jpg">
+  <meta property="og:url" content="https://joushuawebsite.netlify.app">
+  <link rel="icon" href="mybar.jpg">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
+    :root {
+      --primary: #f2b632;
+      --dark: #111;
+      --text: #333;
+      --light: #fdfdfd;
+    }
+    * {
+      scroll-behavior: smooth;
+      transition: all 0.3s ease;
+      box-sizing: border-box;
+    }
     body {
-      font-family: Arial, sans-serif;
+      font-family: 'Poppins', sans-serif;
       margin: 0; padding: 0;
-      background: #fdfdfd;
-      color: #333;
+      background: linear-gradient(to bottom, #fff8ef, #fdfdfd);
+      color: var(--text);
+    }
+    body.dark-mode {
+      background: #111;
+      color: #eee;
     }
     nav {
-      background-color: #111;
+      background-color: var(--dark);
       padding: 15px;
       text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.2);
     }
     nav a {
       color: white; margin: 0 15px;
       text-decoration: none; font-weight: bold;
     }
-    h1 { font-size: 40px; text-align: center; margin: 40px 0 20px; }
+    nav a:hover {
+      color: var(--primary);
+    }
+    .toggle-theme {
+      position: fixed;
+      top: 15px;
+      right: 20px;
+      background: var(--primary);
+      color: black;
+      padding: 8px 12px;
+      border-radius: 5px;
+      font-weight: bold;
+      cursor: pointer;
+      z-index: 200;
+    }
+    .typewriter h1 {
+      overflow: hidden;
+      border-right: .15em solid #000;
+      white-space: nowrap;
+      animation: typing 4s steps(40, end), blink-caret .75s step-end infinite;
+      font-family: 'Playfair Display', serif;
+      font-size: 42px;
+      text-align: center;
+      margin-top: 40px;
+    }
+    @keyframes typing {
+      from { width: 0 }
+      to { width: 100% }
+    }
+    @keyframes blink-caret {
+      from, to { border-color: transparent }
+      50% { border-color: black; }
+    }
+    h2 {
+      font-size: 30px; margin-bottom: 15px; font-family: 'Playfair Display', serif;
+    }
     p {
       font-size: 18px;
       text-align: center;
       line-height: 28px;
       margin: 0 20px 30px;
     }
-    section { padding: 50px 20px; text-align: center; }
+    section { padding: 60px 20px; text-align: center; }
     ul { list-style: none; padding: 0; font-size: 18px; }
-    li { margin-bottom: 10px; }
+    li {
+      margin-bottom: 10px;
+      transition: transform 0.2s ease;
+    }
+    li:hover {
+      transform: scale(1.05);
+    }
     form input, form textarea {
       width: 90%; max-width: 500px;
-      padding: 10px; margin: 10px 0;
-      font-size: 16px;
+      padding: 20px; margin: 14px 0;
+      font-size: 22px;
+      border: 1px solid #bbb;
+      border-radius: 6px;
     }
     form button {
-      padding: 10px 20px;
-      background-color: #444;
+      padding: 14px 26px;
+      background-color: var(--primary);
       color: white;
+      font-weight: bold;
       border: none;
+      border-radius: 5px;
       cursor: pointer;
     }
+    .confirmation {
+      display: none;
+      color: green;
+      font-weight: bold;
+      margin-top: 10px;
+    }
     footer {
-      background-color: #222;
+      background: linear-gradient(to right, #111, #333);
       color: white;
       text-align: center;
-      padding: 20px;
+      padding: 25px 10px;
     }
-    .fade-in {
-      opacity: 0;
-      animation: fadeIn 2s ease forwards;
+    footer a {
+      color: var(--primary);
+      text-decoration: none;
+      margin: 0 10px;
+      font-size: 20px;
     }
-    @keyframes fadeIn {
-      to { opacity: 1; }
+    .logo {
+      text-align: center;
+      margin: 40px auto 20px;
     }
-    .image-row {
+    .logo img {
+      width: 240px;
+      max-width: 90vw;
+      border-radius: 12px;
+      animation: logoPop 2s ease;
+      display: block;
+      margin: 0 auto;
+    }
+    @keyframes logoPop {
+      0% { transform: scale(0.8); opacity: 0; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+    .image-gallery {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
       gap: 20px;
-      padding: 20px;
-    }
-    .image-row img {
-      width: 90%;
-      max-width: 400px;
-      border-radius: 8px;
-    }
-    .logo {
-      text-align: center;
-      margin-top: 40px;
-    }
-    .logo img { width: 200px; }
-
-    /* --- New Video Styles --- */
-    .video-container {
-      max-width: 800px;
       margin: 40px auto;
+      padding: 0 20px;
+    }
+    .image-gallery img {
       width: 100%;
+      max-width: 300px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
     }
     .video-container iframe {
+      width: 90%; max-width: 800px;
       aspect-ratio: 16/9;
-      width: 100%;
-      border: 0;
+      border-radius: 12px;
+      margin: 40px auto;
+      display: block;
     }
-
-    @media screen and (max-width: 600px) {
-      h1 { font-size: 30px; }
-      p { font-size: 16px; }
+    .download-link {
+      display: inline-block;
+      margin: 20px auto;
+      padding: 12px 24px;
+      background-color: #444;
+      color: white;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: bold;
+    }
+    .hours {
+      background-color: #f7f7f7;
+      padding: 30px;
+      font-size: 18px;
+    }
+    .map iframe {
+      width: 100%;
+      max-width: 800px;
+      height: 300px;
+      border-radius: 10px;
+      margin-top: 20px;
+    }
+    .whatsapp {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 999;
+    }
+    .whatsapp img {
+      width: 60px;
+    }
+    #preloader {
+      background: white;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+    }
+    #preloader div {
+      width: 60px;
+      height: 60px;
+      border: 6px solid var(--primary);
+      border-top: 6px solid transparent;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+    }
+    @keyframes spin {
+      to { transform: rotate(360deg); }
     }
   </style>
 </head>
 <body>
-
+  <div id="preloader"><div></div></div>
+  <div class="toggle-theme" onclick="document.body.classList.toggle('dark-mode')">🌓 Toggle Theme</div>
   <div class="logo">
     <img src="mybar.jpg" alt="Bar Image">
   </div>
-
-  <nav>
-    <a href="#about">About</a>
-    <a href="#menu">Menu</a>
-    <a href="#reviews">Reviews</a>
-    <a href="#contact">Contact</a>
-  </nav>
-
-  <h1 class="fade-in">GET YOUR BEERY, HAPPY ON!</h1>
-  <p class="fade-in">
-    Welcome to Restobar! Indulge in our fusion of global flavors and local favorites, crafted to delight every palate.
-  </p>
-
-  <div class="video-container">
-    <iframe
-      src="https://www.youtube.com/embed/9D9h53Q1AEA"
-      title="Restobar promo video"
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-      allowfullscreen>
-    </iframe>
-  </div>
-
-  <div class="image-row">
-    <img src="resto.jpg" alt="Resto Image">
-    <img src="resto3.jpg" alt="Resto Image">
-    <img src="resto5.jpg" alt="Resto Image">
+  <div class="typewriter">
+    <h1>GET YOUR BEERY, HAPPY ON!</h1>
   </div>
 
   <section id="about">
-    <h2>About Yosopra</h2>
-    <p>At Yosopra Restobar, we blend the spirit of relaxation with exciting flavors. Come enjoy a memorable evening with great food, drinks, and ambiance.</p>
+    <h2>About Us</h2>
+    <p>Experience the ultimate blend of ambiance, flavor, and luxury at Restobar. We serve a wide variety of global cuisines with premium beverages in a setting you'll never forget.</p>
   </section>
 
   <section id="menu">
@@ -141,32 +251,53 @@
       <li>🥃 Bacardi Rum – ₹139</li>
       <li>🍛 Mutton Biryani – ₹450</li>
     </ul>
+    <a href="menu.pdf" class="download-link" download>📥 Download Full Menu</a>
   </section>
 
-  <section id="reviews">
-    <h2>Customer Reviews</h2>
-    <p>"Amazing place with great vibes and music!" – Harini V.</p>
-    <p>"Loved the cocktails and the cozy atmosphere." – Kiranmai P.</p>
-    <p>"Best bar experience in Vizag!" – Arun Y.</p>
+  <section class="image-gallery">
+    <img src="resto.jpg" alt="Resto Image 1">
+    <img src="resto3.jpg" alt="Resto Image 2">
+    <img src="resto5.jpg" alt="Resto Image 3">
+  </section>
+
+  <section class="video-container">
+    <iframe src="https://www.youtube.com/embed/9D9h53Q1AEA" title="Restobar promo video" allowfullscreen></iframe>
+  </section>
+
+  <section class="hours">
+    <h2>Opening Hours</h2>
+    <p>Monday – Thursday: 12:00 PM – 11:00 PM</p>
+    <p>Friday – Sunday: 12:00 PM – 1:00 AM</p>
+  </section>
+
+  <section class="map">
+    <iframe src="https://maps.google.com/maps?q=Siripuram%2C%20Visakhapatnam&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" allowfullscreen></iframe>
   </section>
 
   <section id="contact">
     <h2>Contact Us</h2>
-    <p>📍 Naidu Thota, Visakhapatnam, India</p>
-    <p>📞 +91 7396826199</p>
-    <form>
-      <input type="text" placeholder="G. YAMINI YOSHITA" required><br>
-      <input type="email" placeholder="yoshita6541@gmail.com" required><br>
-      <textarea rows="4" placeholder="Enjoy our dining!!" required></textarea><br>
-      <button type="submit">Send</button>
+    <form name="contact" method="POST" data-netlify="true">
+      <input type="text" name="name" placeholder="Your Name" required><br>
+      <input type="email" name="email" placeholder="Your Email" required><br>
+      <textarea name="message" rows="4" placeholder="Your Message" required></textarea><br>
+      <button type="submit">Send Message</button>
     </form>
   </section>
 
+  <a href="https://wa.me/917396826199" class="whatsapp" target="_blank">
+    <img src="https://img.icons8.com/color/48/000000/whatsapp--v1.png" alt="Chat on WhatsApp">
+  </a>
+
   <footer>
     &copy; 2025 Restobar | Follow us:
-    <a href="#" style="color:lightblue;">Instagram</a> |
-    <a href="#" style="color:lightblue;">Facebook</a>
+    <a href="#"><i class="fab fa-instagram"></i></a>
+    <a href="#"><i class="fab fa-facebook"></i></a>
   </footer>
 
+  <script>
+    window.addEventListener('load', () => {
+      document.getElementById('preloader').style.display = 'none';
+    });
+  </script>
 </body>
 </html>
